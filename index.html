@@ -33,6 +33,9 @@
 		.photo{
 			width: 260px;
 			position: absolute;
+			left:50%;
+			top:50%;
+			margin: -260px 0 0 -130px;
 			z-index: 1;
 			box-shadow: 0 0 1px rgba(0,0,0,.1);
 			-webkit-transition:all .6s ease-in-out;
@@ -279,12 +282,17 @@
 			range.wrap = wrap;
 			range.photo = photo;
 
-			range.left.x = [0-photo.w, wrap.w/2-photo.w/2]
-			range.left.y = [0-photo.h, wrap.h]
+			/*range.left.x = [0-photo.w/2, wrap.w/2-photo.w/2]
+			range.left.y = [0-photo.h/2, wrap.h+photo.h/2]
 
 			range.right.x = [wrap.w/2+photo.w/2,wrap.w]
-			range.right.y = range.left.y;
+			range.right.y = range.left.y;*/
 
+			range.left.x=[-photo.w/2,wrap.w/2-photo.w/2];
+		    range.left.y=[-photo.h/2,wrap.h];
+		    range.right.x=[wrap.w/2+photo.w/2,wrap.w-photo.w/2];
+		    range.right.y=range.left.y;
+		    
 			return range;
 		}
 
